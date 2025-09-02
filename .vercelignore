@@ -1,0 +1,62 @@
+# Arquivos de desenvolvimento
+.env.local
+.env.development
+.env.test
+.env.production.local
+
+# Dependências de desenvolvimento
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de build temporários
+dist/
+build/
+.next/
+out/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de teste
+coverage/
+.nyc_output/
+*.test.js
+*.test.ts
+*.test.tsx
+
+# Arquivos de log
+*.log
+logs/
+
+# Arquivos temporários
+.tmp/
+.temp/
+
+# Arquivos de configuração local
+.eslintrc.local
+.prettierrc.local
+
+# Arquivos de cache
+.cache/
+.parcel-cache/
+
+# Arquivos de análise
+bundle-analyzer-report.html
+stats.html
+
+# Arquivos de documentação
+README.md
+CHANGELOG.md
+docs/
+
+# Arquivos de configuração de desenvolvimento
+vercel-production.config.js

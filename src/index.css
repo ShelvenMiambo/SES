@@ -1,0 +1,451 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AgroConecta AI Design System - Agricultura de Moçambique
+All colors MUST be HSL. Design focused on accessibility and agricultural context.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --primary-hover: 142.1 76.2% 32%;
+    --primary-light: 142.1 76.2% 90%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --secondary-hover: 210 40% 90%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --accent-hover: 210 40% 90%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 142.1 76.2% 36.3%;
+    --sidebar-primary-foreground: 355.7 100% 97.3%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 142.1 76.2% 36.3%;
+    
+    /* Gradients e sombras originais */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-earth: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--warning)));
+    
+    /* Sombras originais */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--foreground) / 0.08);
+    --shadow-medium: 0 8px 30px -6px hsl(var(--foreground) / 0.12);
+    --shadow-strong: 0 20px 50px -10px hsl(var(--foreground) / 0.15);
+    
+    /* Transições originais */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --primary-hover: 142.1 76.2% 40%;
+    --primary-light: 142.1 76.2% 20%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 217.2 32.6% 22%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --accent-hover: 217.2 32.6% 22%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142.1 76.2% 36.3%;
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 142.1 76.2% 36.3%;
+    --sidebar-primary-foreground: 355.7 100% 97.3%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 142.1 76.2% 36.3%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Mobile-first responsive typography */
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
+  }
+  
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  h4 {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl;
+  }
+  
+  p {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  /* Touch-friendly button sizes for mobile */
+  button, .btn {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Improved scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better focus states for mobile */
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+  
+  /* Mobile-optimized form elements */
+  input, select, textarea {
+    @apply text-base;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Responsive spacing utilities */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Mobile-first grid layouts */
+  .grid-mobile {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  /* Responsive card layouts */
+  .card-responsive {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  /* Mobile navigation improvements */
+  .nav-mobile {
+    @apply fixed inset-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+  }
+  
+  /* Touch-friendly spacing */
+  .touch-spacing {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
+  }
+  
+  /* Mobile-optimized shadows */
+  .shadow-mobile {
+    @apply shadow-sm sm:shadow-md lg:shadow-lg;
+  }
+  
+  /* Responsive text alignment */
+  .text-responsive {
+    @apply text-center sm:text-left lg:text-center;
+  }
+  
+  /* Mobile-first flexbox utilities */
+  .flex-mobile {
+    @apply flex flex-col sm:flex-row;
+  }
+  
+  .flex-mobile-reverse {
+    @apply flex flex-col-reverse sm:flex-row;
+  }
+  
+  /* Classes originais do design system */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+  
+  /* Responsive gap utilities */
+  .gap-mobile {
+    @apply gap-3 sm:gap-4 lg:gap-6;
+  }
+  
+  /* Mobile-optimized padding */
+  .p-mobile {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+  
+  .px-mobile {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .py-mobile {
+    @apply py-4 sm:py-6 lg:py-8;
+  }
+  
+  /* Responsive margins */
+  .m-mobile {
+    @apply m-4 sm:m-6 lg:m-8;
+  }
+  
+  .mx-mobile {
+    @apply mx-4 sm:mx-6 lg:mx-8;
+  }
+  
+  .my-mobile {
+    @apply my-4 sm:my-6 lg:my-8;
+  }
+}
+
+@layer components {
+  /* Responsive button variants */
+  .btn-mobile {
+    @apply w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base;
+  }
+  
+  .btn-mobile-lg {
+    @apply w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg;
+  }
+  
+  /* Mobile-optimized card */
+  .card-mobile {
+    @apply rounded-lg sm:rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8;
+  }
+  
+  /* Responsive navigation */
+  .nav-mobile-item {
+    @apply block w-full p-3 sm:p-4 text-left hover:bg-muted/50 rounded-lg transition-colors;
+  }
+  
+  /* Mobile-friendly form */
+  .form-mobile {
+    @apply space-y-4 sm:space-y-6;
+  }
+  
+  .form-mobile-group {
+    @apply space-y-2 sm:space-y-3;
+  }
+  
+  /* Responsive layout utilities */
+  .layout-mobile {
+    @apply min-h-screen bg-background;
+  }
+  
+  .content-mobile {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8;
+  }
+  
+  /* Mobile-optimized grid */
+  .grid-mobile-1 {
+    @apply grid grid-cols-1;
+  }
+  
+  .grid-mobile-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2;
+  }
+  
+  .grid-mobile-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  .grid-mobile-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+  }
+}
+
+@layer utilities {
+  /* Mobile-first responsive utilities */
+  .hidden-mobile {
+    @apply hidden sm:block;
+  }
+  
+  .block-mobile {
+    @apply block sm:hidden;
+  }
+  
+  .text-mobile-xs {
+    @apply text-xs sm:text-sm;
+  }
+  
+  .text-mobile-sm {
+    @apply text-sm sm:text-base;
+  }
+  
+  .text-mobile-base {
+    @apply text-base sm:text-lg;
+  }
+  
+  .text-mobile-lg {
+    @apply text-lg sm:text-xl;
+  }
+  
+  .text-mobile-xl {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  .text-mobile-2xl {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  .text-mobile-3xl {
+    @apply text-3xl sm:text-4xl;
+  }
+  
+  .text-mobile-4xl {
+    @apply text-4xl sm:text-5xl;
+  }
+  
+  .text-mobile-5xl {
+    @apply text-5xl sm:text-6xl;
+  }
+  
+  .text-mobile-6xl {
+    @apply text-6xl sm:text-7xl;
+  }
+  
+  /* Responsive spacing utilities */
+  .space-mobile-1 {
+    @apply space-y-1 sm:space-y-2;
+  }
+  
+  .space-mobile-2 {
+    @apply space-y-2 sm:space-y-3;
+  }
+  
+  .space-mobile-3 {
+    @apply space-y-3 sm:space-y-4;
+  }
+  
+  .space-mobile-4 {
+    @apply space-y-4 sm:space-y-6;
+  }
+  
+  .space-mobile-6 {
+    @apply space-y-6 sm:space-y-8;
+  }
+  
+  .space-mobile-8 {
+    @apply space-y-8 sm:space-y-12;
+  }
+  
+  /* Mobile-optimized padding utilities */
+  .p-mobile-1 {
+    @apply p-1 sm:p-2;
+  }
+  
+  .p-mobile-2 {
+    @apply p-2 sm:p-3;
+  }
+  
+  .p-mobile-3 {
+    @apply p-3 sm:p-4;
+  }
+  
+  .p-mobile-4 {
+    @apply p-4 sm:p-6;
+  }
+  
+  .p-mobile-6 {
+    @apply p-6 sm:p-8;
+  }
+  
+  .p-mobile-8 {
+    @apply p-8 sm:p-12;
+  }
+  
+  /* Mobile-optimized margin utilities */
+  .m-mobile-1 {
+    @apply m-1 sm:m-2;
+  }
+  
+  .m-mobile-2 {
+    @apply m-2 sm:m-3;
+  }
+  
+  .m-mobile-3 {
+    @apply m-3 sm:m-4;
+  }
+  
+  .m-mobile-4 {
+    @apply m-4 sm:m-6;
+  }
+  
+  .m-mobile-6 {
+    @apply m-6 sm:m-8;
+  }
+  
+  .m-mobile-8 {
+    @apply m-8 sm:m-12;
+  }
+}

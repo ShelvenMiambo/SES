@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://agroconecta.vercel.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (quando implementar)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow important pages
+Allow: /marketplace
+Allow: /assistente-ia
+Allow: /producao
+Allow: /negociacoes
+Allow: /mensagens
+Allow: /notificacoes
+Allow: /relatorios
+Allow: /subscricoes
