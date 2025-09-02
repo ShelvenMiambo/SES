@@ -27,7 +27,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/' : '/',
   build: {
     // Otimizações para deploy e dispositivos móveis
-    target: ['es2015', 'chrome58', 'firefox57', 'safari11', 'edge16'],
+    target: ['es2018'],
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: process.env.NODE_ENV === 'development',
