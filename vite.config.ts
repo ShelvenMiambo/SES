@@ -41,7 +41,7 @@ export default defineConfig({
         // Code splitting para reduzir tamanho do bundle
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-sheet'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
           router: ['react-router-dom'],
           icons: ['lucide-react'],
           utils: ['clsx', 'tailwind-merge', 'class-variance-authority']
